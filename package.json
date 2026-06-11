@@ -1,0 +1,8 @@
+{
+  "name": "kirvano-resend-webhook",
+  "version": "1.0.0",
+  "description": "Webhook da Kirvano que envia email com Resend",
+  "dependencies": {
+    "resend": "^3.2.0"
+  }
+}
