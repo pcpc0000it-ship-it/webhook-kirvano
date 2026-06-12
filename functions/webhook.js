@@ -27,7 +27,7 @@ exports.handler = async function (event) {
   }
 
   const evento = body.event;
-  const dados = body.data || {};
+  const dados = body.data || body; // Kirvano envia dados direto no body
 
   const eventosAprovados = [
     "purchase.approved",
@@ -57,9 +57,12 @@ exports.handler = async function (event) {
     "aluno";
 
   const nomeProduto =
+    (dados.products && dados.products[0]?.name) ||
+    (dados.products && dados.products[0]?.offer_name) ||
     dados.product?.name ||
     dados.plan?.name ||
     dados.offer?.name ||
+    dados.offer_name ||
     dados.item?.name ||
     null;
 
