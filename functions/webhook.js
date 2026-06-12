@@ -34,6 +34,9 @@ exports.handler = async function (event) {
     "purchase.complete",
     "order.approved",
     "order.paid",
+    "SALE_APPROVED",
+    "sale.approved",
+    "sale_approved",
   ];
 
   if (!eventosAprovados.includes(evento)) {
